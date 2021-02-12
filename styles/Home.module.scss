@@ -1,0 +1,15 @@
+.infoCommic {
+  padding: 1em 0;
+
+  .info {
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+  }
+
+  .title {
+    color: #fdd000;
+    font-weight: 900;
+  }
+}
