@@ -12,7 +12,14 @@ export default MyApp
 SDSADSADAS
 
 ASDSADSA
+<<<<<<< HEAD
 DSADASD
 
 
 bom dia
+=======
+
+Bom dia
+
+Teste
+>>>>>>> 6233c7660df15c4e5dcbb69db2f76b499160193a
