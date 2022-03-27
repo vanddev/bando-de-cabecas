@@ -1,14 +1,14 @@
 import subprocess
 
 def main():
-    repo_files = set(cmd_output('git', 'lfs', 'status').splitlines())
+    repo_files = list(cmd_output('git', 'lfs', 'status').splitlines())
     locked_files = set(cmd_output('git', 'lfs', 'locks').splitlines())
     user_email = cmd_output('git', 'config', 'user.email').splitlines()[0]
 
     repo_files = filter_to_be_commited_files(repo_files)
     for file_locked in locked_files:
         parsed_file = parse_locked_file(file_locked)
-        if(contains(repo_files, parsed_file["file"]) and parsed_file["user"] in user_email):
+        if(contains(repo_files, parsed_file["file"]) and parsed_file["user"] not in user_email):
             print(f'The file {parsed_file["file"]} is locked and cannot be commited')
             exit(1)
 
