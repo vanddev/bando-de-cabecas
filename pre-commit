@@ -5,7 +5,7 @@ import subprocess
 def main():
     repo_files = list(cmd_output('git', 'lfs', 'status').splitlines())
     locked_files = set(cmd_output('git', 'lfs', 'locks').splitlines())
-    user_email = cmd_output('git', 'config', 'user.email').splitlines()[0]
+    user_email = cmd_output('git', 'config', 'user.name').splitlines()[0]
 
     repo_files = filter_to_be_commited_files(repo_files)
     for file_locked in locked_files:
