@@ -11,7 +11,7 @@ def main():
         parsed_file = parse_locked_file(file_locked)
         if(contains(repo_files, parsed_file["file"]) and parsed_file["user"] in user_email):
             print(f'The file {parsed_file["file"]} is locked and cannot be commited')
-            return 1
+            exit(1)
 
 
 def parse_locked_file(locked_file):
